@@ -33,6 +33,7 @@ class IpAddress(db.Model):
             "(is_banned AND ban_reason IS NOT NULL AND ban_date IS NOT NULL)"
             "OR (NOT is_banned AND ban_reason IS NULL AND ban_date IS NULL)"
         ),
+        {"comment": "Table for tracking IP Addresses that have modified PyPI state"},
     )
 
     def __repr__(self):
